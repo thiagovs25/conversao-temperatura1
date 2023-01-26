@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: site-conversor
+spec:
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: siteconversor
+    template:
+      metadata: 
+        labels:
+          app: siteconversor
+      spec:
+        containers:
+        - name: site-conversor
+          image: thiagos25/conversao-temperatura
+          ports:
+          - containerPort: 80

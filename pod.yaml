@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: site-conversor
+spec:
+    containers:
+      - name: siteconversor
+        image: thiagos25/conversao-temperatura
+        ports:
+        - containerPort: 80
